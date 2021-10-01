@@ -1,7 +1,7 @@
 import Cache from "./Cache.js";
 import MapCache from "./MapCache.js";
 import {isWxxcx, storageAvailable} from "./utils.js";
-import WxCache from "./WxCache";
+import WxCache from "./WxCache.js";
 
 
 let CacheJs = null

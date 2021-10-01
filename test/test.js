@@ -1,5 +1,6 @@
+// import CacheJs from "../dist/@lostlz/cache-js.esm.js";
 import CacheJs from "../src/index.js";
-import MapCache from "../src/MapCache.js";
+// import MapCache from "../src/MapCache.js";
 
 // const cache = CacheJs
 const cache = CacheJs.session

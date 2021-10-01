@@ -1,4 +1,4 @@
-# @lost/cache-js
+# CacheJs
 
 简易版缓存js，兼容微信小程序和web，支持基本类型、及能够通过JSON.stringify序列化的对象，支持设置默认值和过期时间。
 

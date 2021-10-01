@@ -1,6 +1,6 @@
 import resolve from '@rollup/plugin-node-resolve';
 import commonjs from '@rollup/plugin-commonjs';
-import {uglify} from 'rollup-plugin-uglify';
+import {terser} from 'rollup-plugin-terser';
 import pkg from './package.json';
 
 export default {
@@ -17,13 +17,13 @@ export default {
 		{
 			file: pkg.browser,
 			format: 'umd',
-			name: '@lost/cache-js',
+			name: '@lostlz/cache-js',
 		},
 	],
 	plugins: [
 		resolve(), // so Rollup can find `ms`
 		commonjs(), // so Rollup can convert `ms` to an ES module
-		uglify(),
+		terser(),
 	]
 }
 

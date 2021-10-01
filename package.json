@@ -1,14 +1,23 @@
 {
-  "name": "@lost/cache-js",
-  "version": "1.0.0",
+  "name": "@lostlz/cache-js",
+  "version": "1.0.1",
+  "main": "dist/@lostlz/cache-js.cjs.js",
+  "module": "dist/@lostlz/cache-js.esm.js",
+  "browser": "dist/@lostlz/cache-js.umd.js",
   "author": "lostlz",
-  "license": "ISC",
-  "main": "dist/@lost/cache-js.cjs.js",
-  "module": "dist/@lost/cache-js.esm.js",
-  "browser": "dist/@lost/cache-js.umd.js",
+  "homepage": "https://github.com/lostlz/cache-js",
+  "keywords": [
+    "cache",
+    "storage",
+    "localStorage",
+    "sessionStorage",
+    "微信小程序Storage"
+  ],
   "scripts": {
+    "dev": "rollup -c",
     "build": "rollup -c",
-    "pretest": "npm run build"
+    "pretest": "npm run build",
+    "publish": "npm publish --access public"
   },
   "dependencies": {
   },
@@ -16,9 +25,8 @@
     "@rollup/plugin-commonjs": "^11.0.1",
     "@rollup/plugin-node-resolve": "^7.0.0",
     "rollup": "^1.29.0",
-    "rollup-plugin-uglify": "^6.0.4"
+    "rollup-plugin-terser": "^7.0.2"
   },
-
   "files": [
     "dist"
   ]
