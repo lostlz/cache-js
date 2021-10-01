@@ -17,6 +17,12 @@ npm i @lostlz/cache-js -S
 
 ## 示例
 
+web环境和小程序环境调用方式相同。
+
+### CacheJs
+
+持久化缓存，对应localStorage。
+
 ```js
 import CacheJs from "@lostlz/cache-js";
 
@@ -26,11 +32,24 @@ CacheJs.set("obj",{a:1,b:2,c:3});
 CacheJs.set("obj",{a:1,b:2,c:3},new Date().getTime()+60*1000);
 // 获取一个缓存,如果缓存不存在，或者超时返回{d:4}
 CacheJs.get("obj",{d:4});
-
-
 ```
 
+### CacheJs.session
 
+session缓存，对应sessionStorage。
+
+小程序环境也可以使用，数据存在全局Map中，应用周期内都有效.
+
+```
+import CacheJs from "@lostlz/cache-js";
+
+// 写入一个对象缓存
+CacheJs.session.set("obj",{a:1,b:2,c:3});
+// 写入一个对象并缓存一分钟
+CacheJs.session.set("obj",{a:1,b:2,c:3},new Date().getTime()+60*1000);
+// 获取一个缓存,如果缓存不存在，或者超时返回{d:4}
+CacheJs.session.get("obj",{d:4});
+```
 
 ## 方法
 
