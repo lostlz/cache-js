@@ -14,7 +14,9 @@ if(isWxxcx){
   CacheJs.session = storageAvailable("sessionStorage") ? new Cache("sessionStorage") : new MapCache()
 }
 
-export default CacheJs
+export {
+  CacheJs
+}
 
 
 

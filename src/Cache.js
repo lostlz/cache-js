@@ -1,5 +1,4 @@
 
-
 export default class Cache {
   /**
    * @param type localStorage/sessionStorage

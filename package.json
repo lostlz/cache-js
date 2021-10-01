@@ -1,6 +1,7 @@
 {
   "name": "@lostlz/cache-js",
-  "version": "1.0.1",
+  "version": "1.0.3",
+  "type":"module",
   "main": "dist/@lostlz/cache-js.cjs.js",
   "module": "dist/@lostlz/cache-js.esm.js",
   "browser": "dist/@lostlz/cache-js.umd.js",
@@ -20,6 +21,7 @@
     "publish": "npm publish --access public"
   },
   "dependencies": {
+    "ms": "^2.0.0"
   },
   "devDependencies": {
     "@rollup/plugin-commonjs": "^11.0.1",
