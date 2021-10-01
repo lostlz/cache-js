@@ -1,0 +1,23 @@
+{
+  "name": "@lost/cache-js",
+  "version": "1.0.0",
+  "main": "dist/@lost/cache-js.cjs.js",
+  "module": "dist/@lost/cache-js.esm.js",
+  "browser": "dist/@lost/cache-js.umd.js",
+  "dependencies": {
+    "ms": "^2.0.0"
+  },
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^11.0.1",
+    "@rollup/plugin-node-resolve": "^7.0.0",
+    "rollup": "^1.29.0",
+    "rollup-plugin-uglify": "^6.0.4"
+  },
+  "scripts": {
+    "build": "rollup -c",
+    "pretest": "npm run build"
+  },
+  "files": [
+    "dist"
+  ]
+}
