@@ -5,7 +5,6 @@ export default class WxCache extends Cache{
 
   constructor() {
     super(null);
-    this._map = new Map()
   }
 
   set(key, value, expire) {
@@ -18,11 +17,8 @@ export default class WxCache extends Cache{
 
   get(key, defaultValue = null) {
     try {
-      const value = wx.getStorageInfoSync()
-      if (value === undefined || value === null){
-        return defaultValue
-      }
-      return this._getExpireValue(key,value,defaultValue);
+      const value = wx.getStorageSync(key)
+      return value ? this._getExpireValue(key,value,defaultValue) : defaultValue
     } catch (e) {
       // Do something when catch error
       return null

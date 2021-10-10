@@ -8,22 +8,25 @@ export default {
 	output:[
 		{
 			file: pkg.main,
-			format: 'cjs',
-		},
-		{
-			file: pkg.module,
 			format: 'esm',
 		},
-		{
-			file: pkg.browser,
-			format: 'umd',
-			name: '@lostlz/cache-js',
-		},
+		// {
+		// 	file: pkg.main,
+		// 	format: 'cjs',
+		// },
+		// {
+		// 	file: pkg.module,
+		// 	format: 'esm',
+		// },
+		// {
+		// 	file: pkg.browser,
+		// 	format: 'umd',
+		// 	name: '@lostlz/cache-js',
+		// },
 	],
-	external: ['ms'],
 	plugins: [
-		resolve(), // so Rollup can find `ms`
-		commonjs(), // so Rollup can convert `ms` to an ES module
+		resolve(), //
+		commonjs(), //
 		terser(),
 	]
 }

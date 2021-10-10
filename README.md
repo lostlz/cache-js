@@ -15,6 +15,8 @@
 npm i @lostlz/cache-js -S
 ```
 
+微信小程序安装完需要构建npm
+
 ## 示例
 
 web环境和小程序环境调用方式相同。
@@ -25,13 +27,16 @@ web环境和小程序环境调用方式相同。
 
 ```js
 import CacheJs from "@lostlz/cache-js";
+// 微信小程序用如下构建
+// const CacheJs = require("@lostlz/cache-js") 
 
 // 写入一个对象缓存
-CacheJs.set("obj",{a:1,b:2,c:3});
+CacheJs.set("obj1",{a:1,b:2,c:3});
 // 写入一个对象并缓存一分钟
-CacheJs.set("obj",{a:1,b:2,c:3},new Date().getTime()+60*1000);
+CacheJs.set("obj2",{a:1,b:2,c:3,d:4},new Date().getTime()+60*1000);
 // 获取一个缓存,如果缓存不存在，或者超时返回{d:4}
-CacheJs.get("obj",{d:4});
+const obj3 = CacheJs.get("obj3",{d:4});
+console.log("obj3",obj3)
 ```
 
 ### CacheJs.session
@@ -44,11 +49,12 @@ session缓存，对应sessionStorage。
 import CacheJs from "@lostlz/cache-js";
 
 // 写入一个对象缓存
-CacheJs.session.set("obj",{a:1,b:2,c:3});
+CacheJs.session.set("obj1",{a:1,b:2,c:3});
 // 写入一个对象并缓存一分钟
-CacheJs.session.set("obj",{a:1,b:2,c:3},new Date().getTime()+60*1000);
+CacheJs.session.set("obj2",{a:1,b:2,c:3,d:4},new Date().getTime()+60*1000);
 // 获取一个缓存,如果缓存不存在，或者超时返回{d:4}
-CacheJs.session.get("obj",{d:4});
+const obj3 = CacheJs.session.get("obj3",{d:4});
+console.log("obj3",obj3)
 ```
 
 ## 方法
