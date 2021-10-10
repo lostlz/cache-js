@@ -1,6 +1,6 @@
 {
   "name": "@lostlz/cache-js",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "type":"module",
   "main": "dist/@lostlz/cache-js.cjs.js",
   "module": "dist/@lostlz/cache-js.esm.js",

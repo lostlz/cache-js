@@ -12,7 +12,7 @@ export const isWxxcx = typeof wx !== 'undefined' && wx !== null && (typeof wx.re
  * @returns {boolean}
  */
 export const storageAvailable = function (type){
-  if (typeof window === 'undefined' || this !== window || !window[type]) return false;
+  if (typeof window === 'undefined' || !window[type]) return false;
 
   let storage;
   try {
