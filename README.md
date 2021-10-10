@@ -2,7 +2,7 @@
 
 ## 概述
 
-一款简易版本地储存插件
+一款简易版本地储存插件。
 
 - 支持基本类型、及能够通过JSON.stringify序列化的对象
 - 支持设置默认值和过期时间
@@ -27,8 +27,6 @@ web环境和小程序环境调用方式相同。
 
 ```js
 import CacheJs from "@lostlz/cache-js";
-// 微信小程序用如下构建
-// const CacheJs = require("@lostlz/cache-js") 
 
 // 写入一个对象缓存
 CacheJs.set("obj1",{a:1,b:2,c:3});
@@ -43,7 +41,7 @@ console.log("obj3",obj3)
 
 session缓存，对应sessionStorage。
 
-小程序环境也可以使用，数据存在全局Map中，应用周期内都有效.
+小程序环境也可以使用，数据存在全局Map中，应用周期内都有效。
 
 ```
 import CacheJs from "@lostlz/cache-js";
@@ -59,10 +57,34 @@ console.log("obj3",obj3)
 
 ## 方法
 
-| 方法                  | 说明                                     | 参数                                                         |
-| :-------------------- | ---------------------------------------- | ------------------------------------------------------------ |
-| set(key,value,expire) | 添加一个缓存,如果存在会覆盖              | key：关键字<br />value：需要存储的内容。支持基本类型、及能够通过JSON.stringify序列化的对象。 <br />expire：超过expire(时间戳/ms)清除缓存,默认永久 |
-| get(key,defaultValue) | 获取一个缓存，如果缓存不存在，返回默认值 | key：关键字<br />defaultValue：默认值，如果缓存不存在，返回此值 |
-| delete(key)           | 删除一个缓存                             | key：关键字                                                  |
-| clear()               | 清空全部缓存                             |                                                              |
+### set(key,value,expire)
+
+添加一个缓存,如果存在会覆盖。
+
+**参数：**
+
+- key：关键字（必填）
+- value：需要存储的内容。支持基本类型、及能够通过JSON.stringify序列化的对象。（必填）
+- expire：超过expire(时间戳/ms)清除缓存,默认永久。（非必填）
+
+### get(key,defaultValue)
+
+获取一个缓存，如果缓存不存在，返回默认值.
+
+**参数：**
+
+- key：关键字。（必填）
+- defaultValue：默认值，如果缓存不存在，返回此值。（非必填）
+
+### delete(key)
+
+删除一个缓存
+
+**参数：**
+
+- key：关键字（必填）
+
+### clear()
+
+清空全部缓存
 
