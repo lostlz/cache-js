@@ -9,7 +9,7 @@ export default class WxCache extends Cache{
 
   set(key, value, expire) {
     try {
-      wx.setStorageSync(key, this._getSetValue(key, value, expire))
+      wx.setStorageSync(this._getKey(key), this._getSetValue(value, expire))
     } catch (e) {
       // Do something when catch error
     }
@@ -17,7 +17,7 @@ export default class WxCache extends Cache{
 
   get(key, defaultValue = null) {
     try {
-      const value = wx.getStorageSync(key)
+      const value = wx.getStorageSync(this._getKey(key))
       return value ? this._getExpireValue(key,value,defaultValue) : defaultValue
     } catch (e) {
       // Do something when catch error
@@ -27,7 +27,7 @@ export default class WxCache extends Cache{
 
   delete(key) {
     try {
-      wx.removeStorageSync('key')
+      wx.removeStorageSync(this._getKey(key))
     } catch (e) {
       // Do something when catch error
     }

@@ -1,12 +1,12 @@
 // import CacheJs from "../dist/@lostlz/cache-js.esm.js";
 // import CacheJs from "@lostlz/cache-js";
-import {CacheJs} from "../src/index.js";
-// import MapCache from "../src/MapCache.js";
+import CacheJs from "../src/index.js";
+import MapCache from "../src/MapCache.js";
 
-// const cache = CacheJs
-const cache = CacheJs.session
+const cache = CacheJs
+// const cache = CacheJs.session
 // const cache = new MapCache()
-
+cache.setPrefixKey("prefix_")
 test()
 
 function textFn(key,value,type,expire=0){

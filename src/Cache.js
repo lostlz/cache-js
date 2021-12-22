@@ -7,6 +7,16 @@ export default class Cache {
     if(type){
       this._storage = window[type]
     }
+
+    this._prefixKey = null
+  }
+
+  /**
+   * 设置key的前缀
+   * @param prefixKey
+   */
+  setPrefixKey(prefixKey){
+    this._prefixKey = prefixKey
   }
 
   /**
@@ -16,7 +26,7 @@ export default class Cache {
    * @param expire 超过expire(时间戳/ms)清除缓存,默认永久
    */
   set(key, value, expire) {
-    this._storage.setItem(key, JSON.stringify(this._getSetValue(key, value, expire)));
+    this._storage.setItem(this._getKey(key), JSON.stringify(this._getSetValue(value, expire)));
   }
 
   /**
@@ -26,7 +36,7 @@ export default class Cache {
    * @returns {null|any}
    */
   get(key, defaultValue = null) {
-    let value = this._storage.getItem(key)
+    let value = this._storage.getItem(this._getKey(key))
 
     if (value === undefined || value === null){
       return defaultValue
@@ -48,7 +58,7 @@ export default class Cache {
    * @param key
    */
   delete(key) {
-    this._storage.removeItem(key);
+    this._storage.removeItem(this._getKey(key));
   }
 
   /**
@@ -58,13 +68,16 @@ export default class Cache {
     this._storage.clear();
   }
 
+  _getKey(key){
+    return this._prefixKey === null ? key : this._prefixKey + key
+  }
+
   /**
    * 如果设置了过期时间,用object格式保存
-   * @param key
    * @param value
    * @param expire
    */
-  _getSetValue(key, value, expire){
+  _getSetValue(value, expire){
     if (expire && expire > 0) {
       value = {
         data: value,

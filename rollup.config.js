@@ -10,19 +10,6 @@ export default {
 			file: pkg.main,
 			format: 'esm',
 		},
-		// {
-		// 	file: pkg.main,
-		// 	format: 'cjs',
-		// },
-		// {
-		// 	file: pkg.module,
-		// 	format: 'esm',
-		// },
-		// {
-		// 	file: pkg.browser,
-		// 	format: 'umd',
-		// 	name: '@lostlz/cache-js',
-		// },
 	],
 	plugins: [
 		resolve(), //

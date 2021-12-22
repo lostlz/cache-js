@@ -6,6 +6,7 @@
 
 - 支持基本类型、及能够通过JSON.stringify序列化的对象
 - 支持设置默认值和过期时间
+- 支持设置key前缀
 - 在web环境支持localStorage/sessionStorage
 - 兼容微信小程序
 
@@ -75,6 +76,12 @@ console.log("obj3",obj3)
 
 - key：关键字。（必填）
 - defaultValue：默认值，如果缓存不存在，返回此值。（非必填）
+
+### setPrefixKey(prefixKey)
+设置key的前缀，如果设置，实际key=prefixKey+key
+
+参数：
+- prefixKey:前缀(必填)，默认为空
 
 ### delete(key)
 

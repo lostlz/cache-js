@@ -1,6 +1,6 @@
 {
   "name": "@lostlz/cache-js",
-  "version": "1.0.10",
+  "version": "1.0.12",
   "type":"module",
   "main": "dist/index.js",
   "miniprogram": "dist",
